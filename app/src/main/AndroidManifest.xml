@@ -21,12 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LogIn_"
-            android:exported="true"/>
-        <activity
-            android:name=".SignUp_"
-            android:exported="true"/>
+        <activity android:name=".SignUp_" />
+        <activity android:name=".LogIn_" />
+        <activity android:name=".HomePage_" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

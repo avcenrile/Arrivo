@@ -11,27 +11,36 @@ import androidx.core.view.WindowInsetsCompat;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 
-@EActivity
+@EActivity(R.layout.landing_page)
 public class LandingPage extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.landing_page);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+    @ViewById
+    Button loginLandingBtn;
+
+    @ViewById
+    Button signUpLandingBtn;
+
+    @ViewById
+    ImageView landingImage;
+
+    @ViewById
+    ImageView welcome;
+
+    @AfterViews
+    void init() {
+        // Any initialization code can go here
+        // Layout is automatically set by @EActivity annotation
     }
 
-    @Click
-    public void logInLandingBtn(){
+    @Click(R.id.loginLandingBtn)
+    void loginButtonClicked() {
+        // Navigate to Login page
         LogIn_.intent(this).start();
     }
 
-    @Click
-    public void signUpLandingBtn(){
+    @Click(R.id.signUpLandingBtn)
+    void signUpButtonClicked() {
+        // Navigate to SignUp page
         SignUp_.intent(this).start();
     }
 }

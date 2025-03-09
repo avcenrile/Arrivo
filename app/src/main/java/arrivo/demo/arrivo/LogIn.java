@@ -1,49 +1,84 @@
 package arrivo.demo.arrivo;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.androidannotations.annotations.EActivity;
-
-@EActivity(R.layout.log_in)
 public class LogIn extends AppCompatActivity {
 
-    @ViewById
-    TextView signUpTitle; // Using the same ID as in SignUp but with "Log In" text
+    private TextView signUpTitle;
+    private EditText emailLI;
+    private EditText passwordLI;
+    private Button logInBtn;
+    private ImageView logoLI;
 
-    @ViewById
-    EditText emailLogin;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.log_in);
 
-    @ViewById
-    EditText confirmPassword; // Using this for the password field
+        // Initialize UI components
+        signUpTitle = findViewById(R.id.logInTitle);
+        emailLI = findViewById(R.id.emailLI);
+        passwordLI = findViewById(R.id.passwordLI);
+        logInBtn = findViewById(R.id.logInBtn);
+        logoLI = findViewById(R.id.logoLI);
 
-    @ViewById
-    Button signUpButton; // Using the same ID as in SignUp but with "Log In" text
-
-    @ViewById
-    ImageView imageView;
-
-    @AfterViews
-    void init() {
-        // Any initialization code can go here
+        // Set click listeners
+        logInBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //temporarily removing validation cause no connection to db and no will to live to code it rn
+//                if (validateInputs()) {
+//                    // Here you would typically authenticate the user
+//                    // For now, we'll just redirect to the homepage
+//                    Intent intent = new Intent(LogIn.this, HomePage.class);
+//                    startActivity(intent);
+//                    finish(); // Close the login activity
+//                }
+                Intent intent = new Intent(LogIn.this, HomePage.class);
+                startActivity(intent);
+                finish(); // Close the login activity
+            }
+        });
     }
 
-    @Click(R.id.logInButton)
-    void loginButtonClicked() {
-        // Get user input
-        String email = emailLogin.getText().toString().trim();
-        String password = confirmPassword.getText().toString().trim();
 
-        // Validate input
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // In a real app, you would authenticate the user here
-        // For this example, we'll just simulate a successful login
-
-        // Navigate to HomePage after successful login
-        HomePage_.intent(this).start();
-        finish(); // Close the LogIn activity
-    }
+//    private boolean validateInputs() {
+//        String email = emailLI.getText().toString().trim();
+//        String password = passwordLI.getText().toString().trim();
+//
+//        // Validate email
+//        if (email.isEmpty()) {
+//            emailLI.setError("Email is required");
+//            return false;
+//        }
+//
+//        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+//            emailLI.setError("Please enter a valid email");
+//            return false;
+//        }
+//
+//        // Validate password
+//        if (password.isEmpty()) {
+//            passwordLI.setError("Password is required");
+//            return false;
+//        }
+//
+//        // For demo purposes, let's use a simple authentication
+//        // In a real app, you would check against your backend/database
+//        if (email.equals("demo@arrivo.ph") && password.equals("password")) {
+//            return true;
+//        } else {
+//            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+//            return false;
+//        }
+//    }
 }

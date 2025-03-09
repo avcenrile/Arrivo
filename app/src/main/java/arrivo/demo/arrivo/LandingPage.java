@@ -1,47 +1,47 @@
 package arrivo.demo.arrivo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-
-@EActivity(R.layout.landing_page)
 public class LandingPage extends AppCompatActivity {
 
-    @ViewById
-    Button loginLandingBtn;
+    private Button loginLandingBtn;
+    private Button signUpLandingBtn;
+    private ImageView landingImage;
+    private ImageView welcome;
 
-    @ViewById
-    Button signUpLandingBtn;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.landing_page);
 
-    @ViewById
-    ImageView landingImage;
+        // Initialize UI components
+        loginLandingBtn = findViewById(R.id.logInLandingBtn);
+        signUpLandingBtn = findViewById(R.id.signUpLandingBtn);
+        landingImage = findViewById(R.id.landingImage);
+        welcome = findViewById(R.id.welcome);
 
-    @ViewById
-    ImageView welcome;
+        // Set click listeners
+        loginLandingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPage.this, LogIn.class);
+                startActivity(intent);
+            }
+        });
 
-    @AfterViews
-    void init() {
-        // Any initialization code can go here
-        // Layout is automatically set by @EActivity annotation
-    }
-
-    @Click(R.id.loginLandingBtn)
-    void loginButtonClicked() {
-        // Navigate to Login page
-        LogIn_.intent(this).start();
-    }
-
-    @Click(R.id.signUpLandingBtn)
-    void signUpButtonClicked() {
-        // Navigate to SignUp page
-        SignUp_.intent(this).start();
+        signUpLandingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPage.this, SignUp.class);
+                startActivity(intent);
+            }
+        });
     }
 }
-

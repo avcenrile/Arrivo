@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/signUpTitle"
+        android:id="@+id/logInTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -19,49 +19,49 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/emailLogIn"
+        android:id="@+id/emailLI"
         android:layout_width="324dp"
         android:layout_height="40dp"
         android:layout_marginTop="60dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="Email"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/logoLI"
+        app:layout_constraintStart_toStartOf="@+id/logoLI"
+        app:layout_constraintTop_toBottomOf="@+id/logoLI" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/passwordLI"
         android:layout_width="324dp"
         android:layout_height="40dp"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/emailLogIn"
+        app:layout_constraintEnd_toEndOf="@+id/emailLI"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/emailLogIn"
-        app:layout_constraintTop_toBottomOf="@+id/emailLogIn" />
+        app:layout_constraintStart_toStartOf="@+id/emailLI"
+        app:layout_constraintTop_toBottomOf="@+id/emailLI" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoLI"
         android:layout_width="234dp"
         android:layout_height="95dp"
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="@+id/signUpTitle"
-        app:layout_constraintTop_toBottomOf="@+id/signUpTitle"
+        app:layout_constraintStart_toStartOf="@+id/logInTitle"
+        app:layout_constraintTop_toBottomOf="@+id/logInTitle"
         tools:srcCompat="@drawable/arrivologov2" />
 
     <Button
-        android:id="@+id/logInButton"
+        android:id="@+id/logInBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:backgroundTint="#F12D2F"
         android:text="Log In"
-        app:layout_constraintEnd_toEndOf="@+id/confirmPassword"
-        app:layout_constraintStart_toStartOf="@+id/confirmPassword"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPassword" />
+        app:layout_constraintEnd_toEndOf="@+id/passwordLI"
+        app:layout_constraintStart_toStartOf="@+id/passwordLI"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLI" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/ejeepLineB"
+        android:layout_width="310dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ejeep_line_b"
+        app:layout_constraintEnd_toEndOf="@+id/ejeepLineA"
+        app:layout_constraintStart_toStartOf="@+id/ejeepLineA"
+        app:layout_constraintTop_toBottomOf="@+id/ejeepLineA" />
+
     <ImageView
         android:id="@+id/arriveHPLogo"
         android:layout_width="175dp"

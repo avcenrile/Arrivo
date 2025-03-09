@@ -1,45 +1,38 @@
 package arrivo.demo.arrivo;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.androidannotations.annotations.EActivity;
-
-@EActivity(R.layout.homepage)
 public class HomePage extends AppCompatActivity {
 
-    @ViewById
-    ImageView arriveHPLogo;
+    private ImageView arriveHPLogo;
+    private ImageButton ejeepLineA;
+    private Button navigateButton; // Button to navigate to the next page you plan to add
 
-    @ViewById
-    ImageButton ejeepLineA;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.homepage);
 
-    @ViewById
-    Button nextPageButton; // This button will lead to the 5th page to be added later
+        // Initialize UI components
+        arriveHPLogo = findViewById(R.id.arriveHPLogo);
+        ejeepLineA = findViewById(R.id.ejeepLineA);
 
-    @AfterViews
-    void init() {
-        // Any initialization code can go here
+        // Set up click listeners
+        ejeepLineA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle E-Jeep Line A selection
+                Toast.makeText(HomePage.this, "E-Jeep Line A selected", Toast.LENGTH_SHORT).show();
+                // Additional functionality can be added here
+            }
+        });
     }
-
-    @Click(R.id.ejeepLineA)
-    void nextPageButtonClicked() {
-        // This will navigate to the 5th page that will be added later
-        // NextPage_.intent(this).start();
-
-        // For now, just show a toast message since the 5th page is not created yet
-        Toast.makeText(this, "5th page will be added later", Toast.LENGTH_SHORT).show();
-    }
-
-//    @Override
-//    public void onBackPressed() {
-//        // Instead of going back, show a dialog to confirm logout
-//        // For simplicity, we'll just go to the landing page
-//        Intent intent = LandingPage_.intent(this).get();
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(intent);
-//    }
 }

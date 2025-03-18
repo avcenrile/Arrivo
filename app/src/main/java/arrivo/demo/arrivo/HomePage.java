@@ -34,5 +34,13 @@ public class HomePage extends AppCompatActivity {
                 // Additional functionality can be added here
             }
         });
+
+        loginLandingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LandingPage.this, LogIn.class);
+                startActivity(intent);
+            }
+        });
     }
 }

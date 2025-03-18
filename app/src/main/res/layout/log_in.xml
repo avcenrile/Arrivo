@@ -5,16 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/logoLI"
+        android:layout_width="234dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintStart_toStartOf="@+id/logInTitle"
+        app:layout_constraintTop_toBottomOf="@+id/logInTitle"
+        tools:srcCompat="@drawable/arrivologov2" />
+
+    <EditText
+        android:id="@+id/passwordLI"
+        android:layout_width="324dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/emailLI"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/emailLI"
+        app:layout_constraintTop_toBottomOf="@+id/emailLI" />
+
     <TextView
         android:id="@+id/logInTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/ubuntu_medium"
         android:text="Log In"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,38 +54,15 @@
         app:layout_constraintStart_toStartOf="@+id/logoLI"
         app:layout_constraintTop_toBottomOf="@+id/logoLI" />
 
-    <EditText
-        android:id="@+id/passwordLI"
-        android:layout_width="324dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/emailLI"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/emailLI"
-        app:layout_constraintTop_toBottomOf="@+id/emailLI" />
-
-    <ImageView
-        android:id="@+id/logoLI"
-        android:layout_width="234dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.315"
-        app:layout_constraintStart_toStartOf="@+id/logInTitle"
-        app:layout_constraintTop_toBottomOf="@+id/logInTitle"
-        tools:srcCompat="@drawable/arrivologov2" />
-
     <Button
         android:id="@+id/logInBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="152dp"
         android:backgroundTint="#F12D2F"
         android:text="Log In"
         app:layout_constraintEnd_toEndOf="@+id/passwordLI"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="@+id/passwordLI"
         app:layout_constraintTop_toBottomOf="@+id/passwordLI" />
 </androidx.constraintlayout.widget.ConstraintLayout>
